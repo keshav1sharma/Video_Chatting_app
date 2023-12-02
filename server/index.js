@@ -9,7 +9,10 @@ const io = require("socket.io")(server, {
 	}
 });
 
-app.use(cors());
+app.use(cors({
+	origin: 'https://p2p-videochat-app.vercel.app',
+	credentials: true,
+}));
 
 const PORT = process.env.PORT || 5000;
 
