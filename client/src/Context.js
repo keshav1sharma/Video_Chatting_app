@@ -4,11 +4,11 @@ import Peer from 'simple-peer';
 
 const SocketContext = createContext();
 
-const socket = io('https://video-chatting-app-backend.vercel.app/' , {
-  withCredentials : true,
-  extraHeaders : {
-    "Access-Control-Allow-Origin": "https://p2p-videochat-app.vercel.app"
-  }
+const socket = io('https://video-chatting-app-backend.vercel.app/',{
+  withCredentials:true,
+  extraHeaders:{
+    "Access-Control-Allow-Origin":'https://p2p-videochat-app.vercel.app',
+  },
 });
 
 const ContextProvider = ({ children }) => {
