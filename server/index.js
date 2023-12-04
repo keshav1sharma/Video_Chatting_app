@@ -3,16 +3,9 @@ const server = require("http").createServer(app);
 const cors = require("cors");
 
 const io = require("socket.io")(server, {
-	cors: {
-		origin: "https://p2p-videochat-app.vercel.app",
-		methods: [ "GET", "POST" ]
-	}
 });
 
-app.use(cors({
-	origin: 'https://p2p-videochat-app.vercel.app',
-	credentials: true,
-}));
+app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
