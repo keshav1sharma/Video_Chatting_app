@@ -2,14 +2,16 @@ const app = require("express")();
 const server = require("http").createServer(app);
 const cors = require("cors");
 
-app.use(cors());
+
 
 const io = require("socket.io")(server, {
 	cors: {
-		origin: "https://p2p-videochat-app.vercel.app",
+		origin: "*",
 		methods: ["GET", "POST"],
 	},
 });
+
+app.use(cors());
 
 const PORT = process.env.PORT || 5000;
 
